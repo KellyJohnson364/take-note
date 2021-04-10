@@ -1,4 +1,5 @@
 
+var uniqid = require('uniqid');
 
 let noteTitle;
 let noteText;
@@ -54,7 +55,8 @@ const deleteNote = (id) =>
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
-
+  activeNote.setAttribute("id",uniqid);
+  console.log(activeNote.id)
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
