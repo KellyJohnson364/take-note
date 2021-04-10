@@ -71,7 +71,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-  newNote.setAttribute("id","uniqid()");
+  newNote.setAttribute("id",uniqid);
   console.log(newNote.id)
   saveNote(newNote).then(() => {
     getAndRenderNotes();
