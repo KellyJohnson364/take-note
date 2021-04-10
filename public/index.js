@@ -1,4 +1,4 @@
-var uniqid = require('uniqid');
+
 
 let noteTitle;
 let noteText;
@@ -71,8 +71,6 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-  newNote.setAttribute("id",uniqid);
-  console.log(newNote.id)
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
