@@ -1,5 +1,5 @@
 
-const notes = require('../db/db.json');
+const notes = require('../../db/db.json');
 
 
 // ROUTING
