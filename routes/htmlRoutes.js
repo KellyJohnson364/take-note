@@ -4,7 +4,7 @@ const path = require('path');
 
 
 
-app.use(express.static('public'));
+
 
 // ROUTING
 
