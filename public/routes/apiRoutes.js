@@ -18,7 +18,7 @@ module.exports = (app) => {
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
     
-     noteData.push(req.body);
+     notes.push(req.body);
       res.json({ok: true});
     }) 
 
@@ -27,7 +27,7 @@ module.exports = (app) => {
 
   app.post('/api/clear', (req, res) => {
     // Empty out the arrays of data
-    noteData.length = 0;
+    notes.length = 0;
    
 
     res.json({ ok: true });

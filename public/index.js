@@ -55,7 +55,7 @@ const deleteNote = (id) =>
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
-  activeNote.setAttribute("id",uniqid);
+  
   
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
@@ -73,6 +73,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
+  newNote.setAttribute("id",uniqid);
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -128,7 +129,7 @@ const renderNoteList = async (notes) => {
   let noteListItems = [];
 
   // Returns HTML element with or without a delete button
-  const createLi = (text, delBtn = false) => {
+  const createLi = (text, delBtn = true) => {
     const liEl = document.createElement('li');
     liEl.classList.add('list-group-item');
 
