@@ -73,7 +73,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-  newNote.setAttribute("id",uniqid);
+  
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -102,6 +102,7 @@ const handleNoteDelete = (e) => {
 const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
+  activeNote.setAttribute("id",uniqid);
   renderActiveNote();
 };
 
@@ -129,7 +130,7 @@ const renderNoteList = async (notes) => {
   let noteListItems = [];
 
   // Returns HTML element with or without a delete button
-  const createLi = (text, delBtn = true) => {
+  const createLi = (text, delBtn = false) => {
     const liEl = document.createElement('li');
     liEl.classList.add('list-group-item');
 
