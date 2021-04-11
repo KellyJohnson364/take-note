@@ -1,4 +1,4 @@
-var uniqid = require('uniqid');
+
 
 
 let noteTitle;
@@ -102,7 +102,7 @@ const handleNoteDelete = (e) => {
 const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  activeNote.setAttribute("id",uniqid());
+  activeNote.setAttribute("id", activeNote.title);
   renderActiveNote();
 };
 
