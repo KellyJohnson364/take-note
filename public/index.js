@@ -1,5 +1,5 @@
-
 var uniqid = require('uniqid');
+
 
 let noteTitle;
 let noteText;
