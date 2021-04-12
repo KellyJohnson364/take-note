@@ -22,11 +22,5 @@ module.exports = (app) => {
 
 
 
-  app.delete('/api/notes/', (req, res) => {
-    
-   
-   
 
-    res.json({ ok: true });
-  });
 };
