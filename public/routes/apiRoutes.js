@@ -22,7 +22,7 @@ module.exports = (app) => {
 
 
 
-  app.delete(`/api/notes/${id}`, (req, res) => {
+  app.delete(`/api/notes/`, (req, res) => {
     
    
    
