@@ -1,4 +1,4 @@
-// DEPENDENCIES
+
 const notes = require('../../db/db.json');
 
 
@@ -19,5 +19,14 @@ module.exports = (app) => {
      notes.push(req.body);
       res.json({ok: true});
     }) 
-  }
- 
+
+
+
+  app.delete(`/api/notes/${id}`, (req, res) => {
+    
+   
+   
+
+    res.json({ ok: true });
+  });
+};
