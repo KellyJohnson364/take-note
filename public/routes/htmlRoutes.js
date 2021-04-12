@@ -1,11 +1,6 @@
 // DEPENDENCIES
 const path = require('path');
 
-
-
-
-
-
 // ROUTING
 
 module.exports = (app) => {

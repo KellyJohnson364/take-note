@@ -89,7 +89,6 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-  console.log(noteId)
   if (activeNote.id === noteId) {
     activeNote = {};
   }
@@ -105,7 +104,6 @@ const handleNoteView = (e) => {
   e.preventDefault();
   
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  console.log(activeNote)
   activeNote.id = i++
   renderActiveNote();
 };
@@ -134,7 +132,7 @@ const renderNoteList = async (notes) => {
   let noteListItems = [];
 
   // Returns HTML element with or without a delete button
-  const createLi = (text, delBtn = true) => {
+  const createLi = (text, delBtn = false) => {
     const liEl = document.createElement('li');
     liEl.classList.add('list-group-item');
 
