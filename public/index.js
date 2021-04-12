@@ -6,7 +6,7 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-let i = 0
+let i = 1
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -74,7 +74,6 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-  
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -112,6 +111,8 @@ const handleNoteView = (e) => {
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
+  console.log(activeNote.id)
+  console.log(activeNote.readonly)
   renderActiveNote();
 };
 
