@@ -104,7 +104,7 @@ const handleNoteView = (e) => {
   let i = 0
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
   console.log(activeNote)
- 
+  activeNote.id = i++
   renderActiveNote();
 };
 
