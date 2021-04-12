@@ -76,6 +76,7 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
+  newNote.id = i++
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
@@ -104,7 +105,6 @@ const handleNoteView = (e) => {
   e.preventDefault();
   
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  activeNote.id = i++
   renderActiveNote();
 };
 
