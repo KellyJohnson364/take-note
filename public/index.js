@@ -30,7 +30,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch(`/api/notes/${id}`, {
+  fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch(`/api/notes/${id}`, {
+  fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -77,6 +77,7 @@ const handleNoteSave = () => {
     text: noteText.value,
   };
   newNote.id = i++
+  console.log(newNote)
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
